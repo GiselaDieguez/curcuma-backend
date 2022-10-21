@@ -4,11 +4,17 @@ const newBooking = async (req, res, next) => {
 
 
 try {
-  const { } = req.body
+  const { date_res, time_res, state_res, prov_id, user_id} = req.body
   
-  const result = await pool.query(`MIRAA HANIII, ACA VA LA QUERY`
-                                      ,[])
-
+  const result = await pool.query(`INSERT INTO dbo."tblRes" (date_res, time_res, state_res, prov_id, user_id)
+  VALUES ($1, $2, $3, $4, $5)`,
+          [
+            date_res, 
+            time_res,
+            state_res,
+            prov_id,
+            user_id
+          ])
     res.status(201).json({
     success: true,
     message: "Se creó una reserva"

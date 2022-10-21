@@ -9,12 +9,14 @@ const PORT = process.env.PORT;
 const createBookings = require('./routes/createBookings.routes');
 const login = require('./routes/login.routes')
 const register = require('./routes/register.routes')
+const listProv = require('./routes/listProv.routes');
 
 
 const app = express();
 
 const corsOptions ={
   origin:'http://localhost:3000', 
+  //origin:'https://curcuma.vercel.app', 
   credentials:true,            
   optionSuccessStatus:200
 }
@@ -28,6 +30,7 @@ app.use(express.json());
 app.use(createBookings)
 app.use(login)
 app.use(register)
+app.use(listProv)
 
 // Erros
 app.use((err, req, res, next) => {
