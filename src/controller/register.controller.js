@@ -27,7 +27,7 @@ const createUser = async(req, res, next) => {
                 ]);
     res.status(201).json({
       success: true,
-      message: "Se registró correctamente"
+      message: "Registration success"
     });
     res.send('Usuario creado')
     

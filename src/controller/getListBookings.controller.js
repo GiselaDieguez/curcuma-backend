@@ -15,7 +15,7 @@ try {
                                     ON prov.prov_id = res.prov_id`)
   if(result.rows.length === 0){
     return res.status(404).json({
-      message: "No hay reservas",
+      message: "No reservations yet",
     })
   }
   res.json(result.rows);

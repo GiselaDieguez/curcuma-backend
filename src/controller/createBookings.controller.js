@@ -17,7 +17,7 @@ try {
           ])
     res.status(201).json({
     success: true,
-    message: "Se creó una reserva"
+    message: "A reservation was created"
   });
 } catch (error) {
   next(error)
